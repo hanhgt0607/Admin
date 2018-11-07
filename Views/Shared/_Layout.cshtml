@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - T1708M1News</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+              integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+              integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    @*<partial name="_CookieConsentPartial" />*@
+    <nav class="navbar navbar-light bg-light">
+        <div class="col-md-3">
+            <a class="navbar-brand" href="#"><i class="fab fa-angrycreative fa-4x"></i></a>
+            <span class="text-muted">Site Slogan</span>
+        </div>
+        <div class="col-md-7">
+            <form class="row">
+                <div class="col-md-8">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <div class="row mb-2">
+                <a href="/change-language/vi" class="img-thumbnail m-1"><img src="~/images/VIE.png" alt="Vietnam Language" width="30" /></a>
+                <a href="/change-language/en" class="img-thumbnail m-1"><img src="~/images/flag-vector-english-2.png" alt="English Language" width="30" /></a>
+                <a href="/change-language/jp" class="img-thumbnail m-1"> <img src="~/images/flag-round-250.png" alt="Japan Language" width="30" /></a>
+            </div>
+            <img src="~/images/icon-doraemon-1.jpg" alt=""
+                 class="img-thumbnail rounded-circle w-25 mr-2 float-left">
+            <div class="mt-3">
+                <strong>Admin</strong>
+                <a href="#">(Logout)</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid row mt-2">
+        <nav class="col-md-2">
+            <div class="nav flex-column nav-pills">
+                <a class="nav-link" href="/admin/bakery/list">Home</a>
+                <a class="nav-link"  href="/admin/bakery/list">Bakery Manager</a>
+                <a class="nav-link" href="/admin/category">Category Manager</a>
+                <a class="nav-link" href="/admin/article">Article Manager</a>
+                <a class="nav-link" href="#v-pills-settings">Settings</a>
+            </div>
+        </nav>
+        <main class="col-md-10">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="container-fluid mt-3 mb-3">
+        <p class="text-center">Copyright 2018 FPT Aptech</p>
+    </footer>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
